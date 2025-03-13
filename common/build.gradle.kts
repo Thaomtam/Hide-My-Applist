@@ -10,7 +10,7 @@ val serviceVerCode: Int by rootProject.extra
 val minBackupVerCode: Int by rootProject.extra
 
 android {
-    namespace = "icu.nullptr.hidemyapplist.common"
+    namespace = "cn.geektang.privacyspace.common"
 
     buildFeatures {
         aidl = true
@@ -31,4 +31,4 @@ kotlin {
 dependencies {
     api(libs.kotlinx.serialization.json)
     compileOnly(libs.dev.rikka.hidden.stub)
-}
+} 

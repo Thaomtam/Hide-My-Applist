@@ -1,6 +1,3 @@
-import com.android.build.api.dsl.Packaging
-import java.util.*
-
 val officialBuild: Boolean by rootProject.extra
 
 plugins {
@@ -19,7 +16,7 @@ if (officialBuild) {
 }
 
 android {
-    namespace = "com.tsng.hidemyapplist"
+    namespace = "cn.geektang.privacyspace"
 
     buildFeatures {
         buildConfig = true
@@ -46,7 +43,7 @@ kotlin {
 autoResConfig {
     generateClass.set(true)
     generateRes.set(false)
-    generatedClassFullName.set("icu.nullptr.hidemyapplist.util.LangList")
+    generatedClassFullName.set("cn.geektang.privacyspace.util.LangList")
     generatedArrayFirstItem.set("SYSTEM")
 }
 
@@ -80,8 +77,6 @@ materialThemeBuilder {
             }
         }
     }
-    // Add Material Design 3 color tokens (such as palettePrimary100) in generated theme
-    // rikka.material >= 2.0.0 provides such attributes
     generatePalette = true
 }
 
@@ -93,7 +88,7 @@ fun afterEval() = android.applicationVariants.forEach { variant ->
         dependsOn("assemble$variantCapped")
         from(layout.buildDirectory.dir("outputs/apk/$variantLowered"))
         into(layout.buildDirectory.dir("apk/$variantLowered"))
-        rename(".*.apk", "HMA-V${variant.versionName}-${variant.buildType.name}.apk")
+        rename(".*.apk", "PrivacySpace-V${variant.versionName}-${variant.buildType.name}.apk")
     }
 }
 
@@ -130,4 +125,4 @@ dependencies {
 
 configurations.all {
     exclude("androidx.appcompat", "appcompat")
-}
+} 

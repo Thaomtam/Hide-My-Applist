@@ -1,6 +1,5 @@
 import com.android.ide.common.signing.KeystoreHelper
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import java.io.PrintStream
 import java.util.Locale
 
 plugins {
@@ -10,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace = "icu.nullptr.hidemyapplist.xposed"
+    namespace = "cn.geektang.privacyspace.xposed"
 
     buildFeatures {
         buildConfig = false
@@ -22,13 +21,12 @@ kotlin {
 }
 
 afterEvaluate {
-    //noinspection WrongGradleMethod
     android.libraryVariants.forEach { variant ->
         val variantCapped = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
         val variantLowered = variant.name.lowercase(Locale.ROOT)
 
         val outSrcDir = layout.buildDirectory.dir("generated/source/signInfo/${variantLowered}")
-        val outSrc = outSrcDir.get().file("icu/nullptr/hidemyapplist/Magic.java")
+        val outSrc = outSrcDir.get().file("cn/geektang/privacyspace/Magic.java")
         val signInfoTask = tasks.register("generate${variantCapped}SignInfo") {
             outputs.file(outSrc)
             doLast {
@@ -42,7 +40,7 @@ afterEvaluate {
                     sign?.keyAlias
                 )
                 PrintStream(outSrc.asFile).apply {
-                    println("package icu.nullptr.hidemyapplist;")
+                    println("package cn.geektang.privacyspace;")
                     println("public final class Magic {")
                     print("public static final byte[] magicNumbers = {")
                     val bytes = certificateInfo.certificate.encoded
@@ -70,4 +68,4 @@ dependencies {
     implementation(libs.dev.rikka.hidden.compat)
     compileOnly(libs.de.robv.android.xposed.api)
     compileOnly(libs.dev.rikka.hidden.stub)
-}
+} 

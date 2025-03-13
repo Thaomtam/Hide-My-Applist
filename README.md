@@ -1,44 +1,39 @@
-# Hide My Applist
+# Privacy KTA
 
-[![Stars](https://img.shields.io/github/stars/Dr-TSNG/Hide-My-Applist?label=Stars)](https://github.com/Dr-TSNG)
-[![Crowdin](https://badges.crowdin.net/hide-my-applist/localized.svg)](https://crowdin.com/project/hide-my-applist)
-[![Build](https://img.shields.io/github/actions/workflow/status/Dr-TSNG/Hide-My-Applist/main.yml?branch=master&logo=github)](https://github.com/Dr-TSNG/Hide-My-Applist/actions)
-[![Release](https://img.shields.io/github/v/release/Dr-TSNG/Hide-My-Applist?label=Release)](https://github.com/Dr-TSNG/Hide-My-Applist/releases/latest)
-[![Download](https://img.shields.io/github/downloads/Dr-TSNG/Hide-My-Applist/total)](https://github.com/Dr-TSNG/Hide-My-Applist/releases/latest)
-[![Channel](https://img.shields.io/badge/Telegram-Channel-blue.svg?logo=telegram)](https://t.me/HideMyApplist)
-[![License](https://img.shields.io/github/license/Dr-TSNG/Hide-My-Applist?label=License)](https://choosealicense.com/licenses/gpl-3.0/)
+Ứng dụng Privacy KTA là một module Xposed giúp ẩn danh sách ứng dụng đã cài đặt khỏi các ứng dụng khác, bảo vệ quyền riêng tư của bạn.
 
-![banner](banner.png)
+## Tính năng
 
-- English  
-- [中文（简体）](README_zh_CN.md)
+- **Ứng dụng ẩn**: Ẩn các ứng dụng đã chọn khỏi danh sách ứng dụng đã cài đặt
+- **Danh sách trắng**: Cho phép một số ứng dụng nhất định xem toàn bộ danh sách ứng dụng
+- **Danh sách đen**: Chặn hoàn toàn một số ứng dụng nhất định không cho xem bất kỳ ứng dụng nào
+- **Kiểm tra trạng thái**: Kiểm tra xem module có hoạt động không và xem nhật ký lọc
 
-## About this module
+## Yêu cầu
 
-Although it's bad practice to detect the installation of specific apps, not every app using root provides random package name support. In this case, if apps related to root (such as Fake Location and Storage Isolation) are detected, it is tantamount to detecting that the device is rooted.
+- Android 10+ (API 29+)
+- LSPosed, EdXposed hoặc các framework Xposed tương thích khác
 
-Additionally, some apps use various loopholes to acquire your app list, in order to use it as fingerprinting data or for other nefarious purposes.
+## Cài đặt
 
-This module can work as an Xposed module to hide apps or reject app list requests, and provides some methods to test whether you have hidden your app list properly.
+1. Cài đặt LSPosed hoặc framework Xposed tương thích
+2. Cài đặt ứng dụng Privacy KTA
+3. Kích hoạt module trong LSPosed Manager
+4. Chọn "android" làm phạm vi (scope)
+5. Khởi động lại thiết bị
+6. Mở ứng dụng Privacy KTA và cấu hình các ứng dụng bạn muốn ẩn
 
-## Copyright Notice
+## Cách sử dụng
 
-Copyright © 2025 HMA developers. All rights reserved.
+1. **Ứng dụng ẩn**: Chọn các ứng dụng bạn muốn ẩn khỏi danh sách ứng dụng đã cài đặt
+2. **Danh sách trắng**: Chọn các ứng dụng được phép xem toàn bộ danh sách ứng dụng
+3. **Danh sách đen**: Chọn các ứng dụng không được phép xem bất kỳ ứng dụng nào
+4. **Cài đặt**: Kiểm tra trạng thái module, đặt lại cấu hình và các tùy chọn khác
 
-The software Hide My Applist, starting from version v3.4, is no longer under the AGPL-3.0 License. Instead, certain rights to the software are reserved by the owner.
+## Giấy phép
 
-The following conditions now apply:
+Dự án này được phân phối dưới giấy phép GPL-3.0.
 
-1. **No Modifications**: The software may not be modified in any way. This includes but is not limited to changing, adding, or removing any part of the software's code or functionality.
+## Tín dụng
 
-2. **No Redistribution**: The software may not be redistributed in any form. This includes but is not limited to renaming, selling, or including the software as part of another project.
-
-3. **No Picking without Credit**: No parts, pieces, or components of the software may be extracted and submitted to other projects without proper credit. This includes, but is not limited to, code snippets, functions, and released binaries.
-
-4. **No Claim to Succession**: Any fork of the software that was created before the license change may not claim to be an official or unofficial successor to the project. This includes but is not limited to using the project's name, branding, or reputation to imply a connection to the original project.
-
-## Translation Contributing
-You can contribute translation [here](https://crowdin.com/project/hide-my-applist).
-
-## Update Log
-[Reference to the release page](https://github.com/Dr-TSNG/Hide-My-Applist/releases)  
+Dự án này lấy cảm hứng từ Hide My Applist và các dự án tương tự. 
